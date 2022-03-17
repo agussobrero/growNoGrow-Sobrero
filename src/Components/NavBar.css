@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navBar {
+    background-color: rgb(246, 252, 250);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: 15vh;
+}
+
+.brand {
+    color: chartreuse;
+}
+
+.navBar-list {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    color: chartreuse;
+    font-size: 20px;
+    font-weight: 500;
+}
