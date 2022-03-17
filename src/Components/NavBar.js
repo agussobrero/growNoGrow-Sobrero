@@ -1,16 +1,18 @@
 import React from 'react';
 import '../Components/NavBar.css';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 const NavBar = () => {
     return (
         <div className='navBar'>
             <h1 className='brand'>GrowNoGrow</h1>
-            <ul className='navBar-list' >
-                <li>Home</li>
-                <li>Products</li>
-                <li>Reviews</li>
-                <li>Contact</li>
-            </ul>
+            <ButtonGroup variant="text" aria-label="text button group" className='navBar-list'>
+                <Button size="large" className='navBar-list'>Home</Button>
+                <Button size="large" className='navBar-list'>Products</Button>
+                <Button size="large" className='navBar-list'>Reviews</Button>
+                <Button size="large" className='navBar-list'>Contact</Button>
+            </ButtonGroup>
         </div>
     )
 }
