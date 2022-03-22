@@ -1,0 +1,15 @@
+
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ffd500;
+    padding: 1.8rem 1.5rem;
+    line-height: 1.7rem;
+    height: 38vh;
+    width: 35vh;
+}
+
+/* .starIcon {
+    transform: scale(0.12);
+    top: 50%;
+} */

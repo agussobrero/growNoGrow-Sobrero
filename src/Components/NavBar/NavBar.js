@@ -1,7 +1,8 @@
 import React from 'react';
-import '../Components/NavBar.css';
+import './NavBar.css';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
     return (
@@ -12,6 +13,7 @@ const NavBar = () => {
                 <Button size="large" className='navBar-list'>Products</Button>
                 <Button size="large" className='navBar-list'>Reviews</Button>
                 <Button size="large" className='navBar-list'>Contact</Button>
+                <CartWidget />
             </ButtonGroup>
         </div>
     )

@@ -26,6 +26,7 @@
     border-color: chartreuse !important;
     font-size: 20px;
     font-weight: 500;
+    margin-left: 12rem;
 }
 
 .css-1or64il-MuiButtonGroup-root .MuiButtonGroup-grouped:not(:last-of-type) {
