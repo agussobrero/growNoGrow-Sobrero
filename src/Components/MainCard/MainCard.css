@@ -9,7 +9,14 @@
     width: 35vh;
 }
 
-/* .starIcon {
-    transform: scale(0.12);
-    top: 50%;
-} */
+.div-starContainer {
+    height: 1px;
+    width: 1px;
+    transform: scale(0.05);
+}
+
+.starIcon {
+
+}
+
+

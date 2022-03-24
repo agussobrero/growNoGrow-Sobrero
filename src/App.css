@@ -36,7 +36,7 @@
 
 .div-listProd {
   height: 100vh;
-  width: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +48,10 @@
   margin-right: 30rem;
 }
 
+.hideOutdoor {
+  font-size: 18px;
+  font-weight: bold;
+}
 
 
 

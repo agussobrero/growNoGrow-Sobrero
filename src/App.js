@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar";
 import ListProducts from "./Components/ListProducts/ListProducts";
 
 
 function App() {
+  const [outDoor, setOutDoor] = useState(true);
+
+  const handleHideOutDoor = () => {
+      setOutDoor(!outDoor)
+  }
+
   return (
     <div className="App">
       <header>
@@ -17,11 +23,11 @@ function App() {
             <p className="p-listProd">Ofertas</p>
           </ListProducts>
           <ListProducts className="div-outdoor">
-            <h4>Outdoor</h4>
+            <button className="hideOutdoor" onClick={handleHideOutDoor}>Outdoor</button>
             <p className="p-listProd">Ofertas</p>
           </ListProducts>
         </div>
-      </main>
+      </main> 
     </div>
   );
 }
