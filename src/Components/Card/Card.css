@@ -4,19 +4,23 @@
     border-radius: 5px;
     background-color: #ffd500;
     padding: 1.8rem 1.5rem;
-    line-height: 1.7rem;
-    height: 38vh;
-    width: 35vh;
+    line-height: 1.6rem;
+    height: 55vh;
+    width: 28vh;
+    z-index: 0;
+    font-size: 14px;
 }
 
 .div-starContainer {
     height: 1px;
     width: 1px;
     transform: scale(0.05);
+    z-index: 1;
 }
 
-.starIcon {
-
+.img-card {
+    height: 100px;
+    width: auto;
 }
 
 

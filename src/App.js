@@ -8,7 +8,9 @@ function App() {
   const [outDoor, setOutDoor] = useState(true);
 
   const handleHideOutDoor = () => {
-      setOutDoor(!outDoor)
+      return (
+          setOutDoor(!outDoor) /* no lo logro hacer funcionar */
+      )
   }
 
   return (
@@ -16,14 +18,10 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <main>
+      <main className="main-container">
         <div className="div-listProd">
-          <ListProducts>
-            <h4>Indoor</h4>
-            <p className="p-listProd">Ofertas</p>
-          </ListProducts>
           <ListProducts className="div-outdoor">
-            <button className="hideOutdoor" onClick={handleHideOutDoor}>Outdoor</button>
+            <button onClick={handleHideOutDoor}>Outdoor</button>
             <p className="p-listProd">Ofertas</p>
           </ListProducts>
         </div>

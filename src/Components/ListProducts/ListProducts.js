@@ -1,25 +1,49 @@
-import React from "react";
-import MainCard from "../MainCard/MainCard";
+import React, {useState, useEffect} from "react";
+import Card from "../Card/Card";
 import "./ListProducts.css";
+import Data from "../Data/Data";
 
-const ListProducts = ({children})=> {
+const ListProducts = ()=> {
 
-    let dataProduct = {
-        product:"ferti",
-        brand:"ferti fox",
-        price:200,
-        stock:6
+    const [products, setProducts] = useState([]);
+
+    const url = Data();
+
+    const getProducts = () =>{
+        return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve (url.productsList)
+        }, 2000)
+        })
     }
+
+    /* Probè hacerlo con async como segunda posibilidad */
+    /* const getProductsAsync = async ()=> {
+        try {
+            const response = await getProducts().then((data)=> console.log(data));
+        }
+        catch (err) {
+            console.log(err)
+        }
+    } */
+
+    useEffect ( () => {
+        getProducts().then ((result) => {
+        setProducts(result)
+    })
+    },[])
+    console.log(products)
 
     return(
         <div className="div-mainCard"> 
-            <h2>{children}</h2>
-            {/* <MainCard data={dataProduct}/> */}
-            <MainCard product="tierra" brand="growmix" price="2000" stock="5" initial="1" onAdd/>
-            <MainCard product="tierra" brand="d3" price="2200" stock="4" initial="1" onAdd/>
-            <MainCard product="maceta" brand="root" price="75" stock="10" initial="1" onAdd/>
-            <MainCard product="maceta" brand="root" price="80" stock="12" initial="1" onAdd/>
-            <MainCard product="maceta" brand="soplada" price="82" stock="8" initial="1" onAdd/>
+            {
+                products.map((product) =>{
+                const {id} = product
+                    return(
+                        <Card data={product} key={id}/>
+                    )
+                })
+            }
         </div>
     )
 }

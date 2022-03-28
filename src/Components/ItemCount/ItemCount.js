@@ -20,7 +20,7 @@ const ItemCount = (props) =>{
     }
 
     const onAdd = () =>{
-        alert(`usted esta llevando: ${count} productos en el carrito`)
+        alert(`usted esta agregando: ${count} productos al carrito`)
     }
 
     return(

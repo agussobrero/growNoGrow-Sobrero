@@ -1,5 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -16,6 +23,7 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +38,15 @@
 
 /* Custom App Styles */
 
+#root {
+  width: 100%;
+}
+
+.main-container {
+  height: 100vh;
+  width: 100%;
+}
+
 .p-listProd {
   font-size: 18px;
 }
@@ -38,19 +55,9 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-}
-
-.div-outdoor {
-  margin-right: 30rem;
-}
-
-.hideOutdoor {
-  font-size: 18px;
-  font-weight: bold;
 }
 
 
