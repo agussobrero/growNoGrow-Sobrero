@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar";
 import ListProducts from "./Components/ListProducts/ListProducts";
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 
 
 function App() {
@@ -20,10 +21,10 @@ function App() {
       </header>
       <main className="main-container">
         <div className="div-listProd">
-          <ListProducts className="div-outdoor">
+          <ListProducts>
             <button onClick={handleHideOutDoor}>Outdoor</button>
-            <p className="p-listProd">Ofertas</p>
           </ListProducts>
+          <ItemDetailContainer />
         </div>
       </main> 
     </div>

@@ -32,7 +32,7 @@ const ListProducts = ()=> {
         setProducts(result)
     })
     },[])
-    console.log(products)
+/*     console.log(products) */
 
     return(
         <div className="div-mainCard"> 
