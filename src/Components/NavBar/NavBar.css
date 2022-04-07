@@ -29,6 +29,11 @@
     margin-left: 12rem;
 }
 
+.navBar-link {
+    color: chartreuse !important;
+    text-decoration: none;
+}
+
 .css-1or64il-MuiButtonGroup-root .MuiButtonGroup-grouped:not(:last-of-type) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;

@@ -1,5 +1,5 @@
 
-const DataProduct =  {
+const dataProduct =  {
             "product": 
                 {
                     "id": 1,
@@ -13,4 +13,4 @@ const DataProduct =  {
                 }
 }
 
-export default DataProduct;
+export default dataProduct;

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import DataProduct from "../Data/DataProduct";
+import dataProduct from "../Data/dataProduct";
 
 const ItemDetailContainer = ()=> {
 
@@ -9,7 +9,7 @@ const ItemDetailContainer = ()=> {
     const getProduct = () =>{
         return new Promise ((resolve, reject)=>{
         setTimeout(()=>{
-            resolve (DataProduct.product)
+            resolve (dataProduct.product)
         }, 2000)
         })
     }
@@ -19,7 +19,6 @@ const ItemDetailContainer = ()=> {
         setProduct(result)
     })
     },[])
-    console.log(product)
 
     return (
     <>

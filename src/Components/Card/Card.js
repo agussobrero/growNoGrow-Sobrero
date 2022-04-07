@@ -1,11 +1,13 @@
 import React from "react";
 import "./Card.css";
 import ItemCount from "../ItemCount/ItemCount";
+import {Link} from "react-router-dom";
+
 
 const Card = (props)=> {
     const {data} = props
     // eslint-disable-next-line
-    const {id, categorie, prod, size, price, stock, url, description} = data
+    const {id, category, prod, size, price, stock, url} = data
 
     return(
         <div>
@@ -16,10 +18,10 @@ const Card = (props)=> {
                 <div key={id}>
                     <img src={url} alt="imgProd" className="img-card"></img>
                     <h2>{prod}</h2>
-                    <p>Categoria: {categorie}</p>
+                    <p>Categoria: {category}</p>
                     <p>Tamaño: {size}</p>
                     <p>Precio: {price}</p>
-                    <button>Ver mas detalles</button>
+                    <Link to={`/product/${id}`} ><button>Ver mas detalles</button></Link>
                 </div>
                 <ItemCount stock={stock}/>
             </div>

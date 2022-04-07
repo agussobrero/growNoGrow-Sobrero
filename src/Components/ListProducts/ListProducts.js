@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from "react";
 import Card from "../Card/Card";
 import "./ListProducts.css";
-import Data from "../Data/Data";
+import data from "../Data/data";
+import { useParams } from "react-router-dom";
 
 const ListProducts = ()=> {
 
     const [products, setProducts] = useState([]);
 
-    const url = Data();
+    const {category} = useParams()
+    
+
+    const url = data;
 
     const getProducts = () =>{
         return new Promise ((resolve, reject)=>{
@@ -17,22 +21,35 @@ const ListProducts = ()=> {
         })
     }
 
-    /* Probè hacerlo con async como segunda posibilidad */
-    /* const getProductsAsync = async ()=> {
+    /* Probè hacerlo con async como segunda posibilidad
+    const getProductsAsync = async ()=> {
         try {
             const response = await getProducts().then((data)=> console.log(data));
         }
         catch (err) {
-            console.log(err)
         }
     } */
-
+    
     useEffect ( () => {
+        setProducts([])
         getProducts().then ((result) => {
-        setProducts(result)
+            setProducts(result)
+            selectCategory(result, category)
     })
-    },[])
-/*     console.log(products) */
+    },[category])
+
+    const selectCategory = (array, category) =>{
+        return(
+            array.map( (product)=>{
+                console.log(product)
+                if(product.category==category) {
+                    return(
+                        setProducts([...products, product])
+                    )
+                }
+            })
+        )
+    }
 
     return(
         <div className="div-mainCard"> 

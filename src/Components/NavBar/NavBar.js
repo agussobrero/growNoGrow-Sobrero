@@ -3,20 +3,63 @@ import './NavBar.css';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import CartWidget from '../CartWidget/CartWidget';
+import {Link} from "react-router-dom";
+import pages from '../../pages/pages';
+
 
 const NavBar = () => {
-    return (
+
+    return(
         <div className='navBar'>
-            <h1 className='brand'>GrowNoGrow</h1>
-            <ButtonGroup variant="text" aria-label="text button group" className='navBar-list'>
-                <Button size="large" className='navBar-list'>Home</Button>
-                <Button size="large" className='navBar-list'>Products</Button>
-                <Button size="large" className='navBar-list'>Reviews</Button>
-                <Button size="large" className='navBar-list'>Contact</Button>
-                <CartWidget />
-            </ButtonGroup>
-        </div>
+                    <h1 className='brand'>
+                        <Link className="navBar-link" to={"/home"}>GrowNoGrow</Link>
+                    </h1>
+                    <ButtonGroup variant="text" aria-label="text button group" className='navBar-list'>
+                        
+                        <Button size="large" className='navBar-list'>
+                            <Link className="navBar-link" to={`/crema`}>Crema</Link>
+                        </Button>
+                        <Button size="large" className='navBar-list'>
+                            <Link className="navBar-link" to={`/aceite`}>Aceite</Link>
+                        </Button>
+                        <Button size="large" className='navBar-list'>
+                            <Link className="navBar-link" to={`/pet`}>Pet</Link>
+                        </Button>
+
+                        {pages.map( (page)=> {
+                            return(
+                        <Button size="large" className='navBar-list' key={page.id}>
+                            <Link className="navBar-link" to={page.path}>{page.page}</Link>
+                        </Button>
+                                )
+                            })
+                        }
+                        <CartWidget />
+                    </ButtonGroup>
+                </div>
     )
+    
+    /* return (
+                <div className='navBar'>
+                    <h1 className='brand'>
+                        <Link className="navBar-link" to={"/home"}>GrowNoGrow</Link></h1>
+                    <ButtonGroup variant="text" aria-label="text button group" className='navBar-list'>
+                        <Button size="large" className='navBar-list'>
+                            <Link className="navBar-link" to={"/home"}>Home</Link>
+                        </Button>
+                        <Button size="large" className='navBar-list'>
+                            <Link className="navBar-link" to={"/products"}>Products</Link>
+                        </Button>
+                        <Button size="large" className='navBar-list'>
+                            <Link className="navBar-link" to={"/reviews"}>Reviews</Link>
+                        </Button>
+                        <Button size="large" className='navBar-list'>
+                            <Link className="navBar-link" to={"/contact"}>Contact</Link>
+                        </Button>
+                        <CartWidget />
+                    </ButtonGroup>
+                </div>
+                ) */
 }
 
 export default NavBar

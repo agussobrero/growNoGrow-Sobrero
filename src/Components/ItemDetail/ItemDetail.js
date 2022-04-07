@@ -1,21 +1,38 @@
-import React from "react";
-import "../Card/Card"
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import data from "../Data/data";
 
-const ItemDetail = (props)=> {
+const ItemDetail = ()=> {
     
-    const {data} = props
-    const {id, categorie, prod, size, price, stock, url, description} = data
+    const {id} = useParams({})
+    const [product, setProduct] = useState({})
+
+    const dataProducts= data.productsList;
+
+    useEffect( ()=>{
+        selectProductId(dataProducts, id)
+    },[id])
+    
+    const selectProductId = (array, id) =>{
+        array.forEach( (product)=>{
+                if(product.id == id) {
+                    return(
+                        setProduct(product)
+                    )
+                }
+            })
+    }
 
     return (
         <div className="card">
-            <div key={id}>
-                    <img src={url} alt="imgProd" className="img-card"></img>
-                    <h2>{prod}</h2>
-                    <p>Categoria: {categorie}</p>
-                    <p>Tamaño: {size}</p>
-                    <p>Precio: {price}</p>
-                    <p>Stock: {stock}</p>
-                    <p>Description: {description}</p>
+            <div key={product.id}>
+                    <img src={product.url} alt="imgProd" className="img-card"></img>
+                    <h2>{product.prod}</h2>
+                    <p>Categoria: {product.category}</p>
+                    <p>Tamaño: {product.size}</p>
+                    <p>Precio: {product.price}</p>
+                    <p>Stock: {product.stock}</p>
+                    <p>Description: {product.description}</p>
                 </div>
         </div>
     )

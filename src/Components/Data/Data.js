@@ -1,10 +1,9 @@
-const Data = () => {
-    return(
-        {
+const data = {
+
             "productsList": [
                 {
-                    "id": 1,
-                    "categorie": "crema",
+                    "id": "1",
+                    "category": "crema",
                     "prod": "CreamCbd",
                     "size": "chico",
                     "price": 1800,
@@ -13,8 +12,8 @@ const Data = () => {
                     "description": "Crema con cbd, perfecta para la aplicacion en zonas doloridas"
                 },
                 {
-                    "id": 2,
-                    "categorie": "crema",
+                    "id": "2",
+                    "category": "crema",
                     "prod": "CreamCbd",
                     "size": "grande",
                     "price": 2000,
@@ -23,8 +22,8 @@ const Data = () => {
                     "description": "Crema con cbd, perfecta para la realizacion de tratamientos contra el dolor crónico"
                 },
                 {
-                    "id": 3,
-                    "categorie": "aceite",
+                    "id": "3",
+                    "category": "aceite",
                     "prod": "OilCbd",
                     "size": "chico",
                     "price": 1500,
@@ -33,8 +32,8 @@ const Data = () => {
                     "description": "Aceite a base de cbd, para tratar insomnio o falta de apetito"
                 },
                 {
-                    "id": 4,
-                    "categorie": "aceite",
+                    "id": "4",
+                    "category": "aceite",
                     "prod": "OilCbd",
                     "size": "grande",
                     "price": 1800,
@@ -43,8 +42,8 @@ const Data = () => {
                     "description": "Aceite a base de cbd, aplicacion oral y reiterada para acompañar trataminetos o aminorar dolores"
                 },
                 {
-                    "id": 5,
-                    "categorie": "pet",
+                    "id": "5",
+                    "category": "pet",
                     "prod": "PetCapsules",
                     "size": "chico",
                     "price": 2500,
@@ -53,8 +52,8 @@ const Data = () => {
                     "description": "Capsulas de sabores con cbd, para relajar a tu mascota en base a su peso"
                 },
                 {
-                    "id": 6,
-                    "categorie": "pet",
+                    "id": "6",
+                    "category": "pet",
                     "prod": "PetCapsules",
                     "size": "grande",
                     "price": 2800,
@@ -63,8 +62,6 @@ const Data = () => {
                     "description": "Capsulas de sabores con cbd, para tratar la ansiedad de tu mascota o ayudarlo con sus dolores"
                 }
             ]
-        }
-    )
 }
 
-export default Data;
+export default data;
