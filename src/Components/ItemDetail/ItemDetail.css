@@ -1,0 +1,18 @@
+
+.card-detail{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ffd500;
+    padding: 1.8rem;
+    line-height: 1.6rem;
+    height: 67vh;
+    width: 68vh;
+    font-size: 14px;
+    margin-top: 3rem;
+}
+
+.menus{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}

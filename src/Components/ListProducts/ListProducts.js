@@ -9,14 +9,16 @@ const ListProducts = ()=> {
     const [products, setProducts] = useState([]);
 
     const {category} = useParams()
-    
 
-    const url = data;
+    const [loading, setLoading] = useState(true)
+
+    const dataProducts = data.productsList;
 
     const getProducts = () =>{
         return new Promise ((resolve, reject)=>{
         setTimeout(()=>{
-            resolve (url.productsList)
+            const myData = category ? dataProducts.filter( (product)=> product.category === category) : dataProducts
+            resolve (myData)
         }, 2000)
         })
     }
@@ -31,14 +33,16 @@ const ListProducts = ()=> {
     } */
     
     useEffect ( () => {
+        setLoading(true)
         setProducts([])
         getProducts().then ((result) => {
             setProducts(result)
-            selectCategory(result, category)
+            /* selectCategory(result, category) */
     })
+    .finally(()=> setLoading(false))
     },[category])
 
-    const selectCategory = (array, category) =>{
+    /* const selectCategory = (array, category) =>{
         return(
             array.map( (product)=>{
                 console.log(product)
@@ -49,19 +53,20 @@ const ListProducts = ()=> {
                 }
             })
         )
-    }
+    } */
 
     return(
-        <div className="div-mainCard"> 
-            {
+        loading ? (<h2>Loading...</h2>) : ( 
+            <div className="div-mainCard"> 
+                {
                 products.map((product) =>{
-                const {id} = product
                     return(
-                        <Card data={product} key={id}/>
+                        <Card data={product} key={product.id}/>
                     )
                 })
-            }
-        </div>
+                }
+            </div>
+        )
     )
 }
 

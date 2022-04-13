@@ -1,6 +1,5 @@
 import React from "react";
 import "./Card.css";
-import ItemCount from "../ItemCount/ItemCount";
 import {Link} from "react-router-dom";
 
 
@@ -23,7 +22,6 @@ const Card = (props)=> {
                     <p>Precio: {price}</p>
                     <Link to={`/product/${id}`} ><button>Ver mas detalles</button></Link>
                 </div>
-                <ItemCount stock={stock}/>
             </div>
         </div>
     )

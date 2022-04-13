@@ -10,6 +10,7 @@ import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./Components/Cart/Cart";
 
 
 function App() {
@@ -32,9 +33,8 @@ function App() {
           <Route path="/products" element={<Products />}/>
           <Route path="/product/:id" element={<ItemDetailContainer />}/>
           <Route path="/:category/" element={<Products />}/>
-{/*           <Route path="/:category/:id" element={<ItemDetailContainer />}/> */}
-          <Route path="/home" element={<Home />}/>
-          
+          <Route path="/home" element={<Home />}/>        
+          <Route path="/cart" element={<Cart />}/>        
           <Route path="*" element={<Error />}/>
         </Routes>
       </BrowserRouter>

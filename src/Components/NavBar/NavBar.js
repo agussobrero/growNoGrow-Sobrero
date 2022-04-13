@@ -15,7 +15,6 @@ const NavBar = () => {
                         <Link className="navBar-link" to={"/home"}>GrowNoGrow</Link>
                     </h1>
                     <ButtonGroup variant="text" aria-label="text button group" className='navBar-list'>
-                        
                         <Button size="large" className='navBar-list'>
                             <Link className="navBar-link" to={`/crema`}>Crema</Link>
                         </Button>
@@ -38,28 +37,6 @@ const NavBar = () => {
                     </ButtonGroup>
                 </div>
     )
-    
-    /* return (
-                <div className='navBar'>
-                    <h1 className='brand'>
-                        <Link className="navBar-link" to={"/home"}>GrowNoGrow</Link></h1>
-                    <ButtonGroup variant="text" aria-label="text button group" className='navBar-list'>
-                        <Button size="large" className='navBar-list'>
-                            <Link className="navBar-link" to={"/home"}>Home</Link>
-                        </Button>
-                        <Button size="large" className='navBar-list'>
-                            <Link className="navBar-link" to={"/products"}>Products</Link>
-                        </Button>
-                        <Button size="large" className='navBar-list'>
-                            <Link className="navBar-link" to={"/reviews"}>Reviews</Link>
-                        </Button>
-                        <Button size="large" className='navBar-list'>
-                            <Link className="navBar-link" to={"/contact"}>Contact</Link>
-                        </Button>
-                        <CartWidget />
-                    </ButtonGroup>
-                </div>
-                ) */
 }
 
 export default NavBar
