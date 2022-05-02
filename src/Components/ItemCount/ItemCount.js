@@ -20,6 +20,10 @@ const ItemCount = (props) =>{
         }
     }
 
+    const add = () =>{
+        action(count)
+    }
+
     return(
         <>
             <div>
@@ -27,7 +31,7 @@ const ItemCount = (props) =>{
                 <p>Cantidad: {count}</p>
                 <button onClick={handleClickSub}>-</button>
             </div>
-            <button onClick={(e)=>action(e)}>Agregar al Carrito</button>
+            <button onClick={add}>Agregar al Carrito</button>
         </>
     )
 }

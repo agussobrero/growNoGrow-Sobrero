@@ -7,7 +7,7 @@ const pages = [
 },
 {
     id: 2,
-    page: "Products",
+    page: "Productos",
     path: "/products"
 },
 {
@@ -17,7 +17,7 @@ const pages = [
 },
 {
     id: 4,
-    page: "Contact",
+    page: "Contacto",
     path: "/contact"
 },
 ]

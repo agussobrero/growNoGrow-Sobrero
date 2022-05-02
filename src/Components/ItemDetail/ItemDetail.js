@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../Data/data";
 import ItemCount from "../ItemCount/ItemCount"
 import Container from '@mui/material/Container';
 import { Link } from "react-router-dom";
 import "../ItemDetail/ItemDetail.css"
+import { CartContext } from "../Context/CartContext";
 
 
 const ItemDetail = ()=> {
@@ -13,6 +14,8 @@ const ItemDetail = ()=> {
     const [product, setProduct] = useState({})
 
     const [onCarrito, setOnCarrito] = useState(0)
+
+    const {addProductToCart} = useContext(CartContext)
 
     const dataProducts= data.productsList;
 
@@ -30,9 +33,9 @@ const ItemDetail = ()=> {
             })
     }
 
-    const onAdd = (e) =>{
-        e.stopPropagation()
-        setOnCarrito(onCarrito + 1)
+    const onAdd = (count) =>{
+        setOnCarrito(count)
+        addProductToCart({...product, quantity: count})
         
     }
 
@@ -46,7 +49,6 @@ const ItemDetail = ()=> {
                 <p>Precio: {product.price}</p>
                 <p>Stock: {product.stock}</p>
                 <p>Description: {product.description}</p>
-                <p>Cantidad elegida: {onCarrito}</p>
                 
                 {
                     onCarrito===0 ? (

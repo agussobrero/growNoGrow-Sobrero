@@ -6,9 +6,9 @@ const Products = () => {
     return(
         <>
             <main className="main-container">
-            <div className="div-listProd">
-            <ListProducts />
-            </div>
+                <div className="div-listProd">
+                    <ListProducts />
+                </div>
             </main> 
         </>
     )

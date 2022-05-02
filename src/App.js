@@ -1,8 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar";
-/* import ListProducts from "./Components/ListProducts/ListProducts";
-import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer"; */
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Contact from "./pages/Contact";
 import Reviews from "./pages/Reviews";
@@ -10,33 +8,31 @@ import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
-import Cart from "./Components/Cart/Cart";
+import Cart from "./pages/Cart";
+import CartProvider from "./Components/Context/CartContext";
+import CartWidget from "./Components/CartWidget/CartWidget";
 
 
 function App() {
-  const [outDoor, setOutDoor] = useState(true);
-
   // eslint-disable-next-line
-  const handleHideOutDoor = () => {
-    return (
-      setOutDoor(!outDoor) /* no lo logro hacer funcionar */
-    )
-  }
 
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/reviews" element={<Reviews />}/>
-          <Route path="/products" element={<Products />}/>
-          <Route path="/product/:id" element={<ItemDetailContainer />}/>
-          <Route path="/:category/" element={<Products />}/>
-          <Route path="/home" element={<Home />}/>        
-          <Route path="/cart" element={<Cart />}/>        
-          <Route path="*" element={<Error />}/>
-        </Routes>
+        <CartProvider>
+          <NavBar />
+          <Routes>
+            <Route path="/contact" element={<Contact />}/>
+            <Route path="/reviews" element={<Reviews />}/>
+            <Route path="/products" element={<Products />}/>
+            <Route path="/cartWidget" element={<CartWidget />}/>
+            <Route path="/product/:id" element={<ItemDetailContainer />}/>
+            <Route path="/:category/" element={<Products />}/>
+            <Route path="/home" element={<Home />}/>        
+            <Route path="/cart" element={<Cart />}/>        
+            <Route path="*" element={<Error />}/>
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
     </div>
   );

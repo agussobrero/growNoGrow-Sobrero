@@ -14,6 +14,14 @@ const ListProducts = ()=> {
 
     const dataProducts = data.productsList;
 
+/*     const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)}
+
+    const handleClose = () => {
+    setAnchorEl(null)} */
+
     const getProducts = () =>{
         return new Promise ((resolve, reject)=>{
         setTimeout(()=>{
@@ -22,38 +30,15 @@ const ListProducts = ()=> {
         }, 2000)
         })
     }
-
-    /* Probè hacerlo con async como segunda posibilidad
-    const getProductsAsync = async ()=> {
-        try {
-            const response = await getProducts().then((data)=> console.log(data));
-        }
-        catch (err) {
-        }
-    } */
     
     useEffect ( () => {
         setLoading(true)
         setProducts([])
         getProducts().then ((result) => {
             setProducts(result)
-            /* selectCategory(result, category) */
     })
     .finally(()=> setLoading(false))
     },[category])
-
-    /* const selectCategory = (array, category) =>{
-        return(
-            array.map( (product)=>{
-                console.log(product)
-                if(product.category==category) {
-                    return(
-                        setProducts([...products, product])
-                    )
-                }
-            })
-        )
-    } */
 
     return(
         loading ? (<h2>Loading...</h2>) : ( 
