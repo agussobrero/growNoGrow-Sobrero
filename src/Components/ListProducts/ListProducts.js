@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
 import Card from "../Card/Card";
 import "./ListProducts.css";
-import data from "../Data/data";
+/* import data from "../Data/data"; */
 import { useParams } from "react-router-dom";
+import db from "../../firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 
 const ListProducts = ()=> {
 
@@ -12,24 +14,18 @@ const ListProducts = ()=> {
 
     const [loading, setLoading] = useState(true)
 
-    const dataProducts = data.productsList;
+/*     const dataProducts = data.productsList; */
 
-/*     const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)}
-
-    const handleClose = () => {
-    setAnchorEl(null)} */
-
-    const getProducts = () =>{
-        return new Promise ((resolve, reject)=>{
-        setTimeout(()=>{
-            const myData = category ? dataProducts.filter( (product)=> product.category === category) : dataProducts
-            resolve (myData)
-        }, 2000)
+    const getProducts = async () =>{
+        const productCollection = collection(db, "productsList")
+        const productsSnapshot = await getDocs(productCollection)
+        const dataProducts = productsSnapshot.docs.map((doc)=>{
+            let product = doc.data()
+            product.id = doc.id
+            return product
         })
-    }
+        return dataProducts
+    }       
     
     useEffect ( () => {
         setLoading(true)

@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const Card = (props)=> {
     const {data} = props
     // eslint-disable-next-line
-    const {id, category, prod, size, price, stock, url} = data
+    const {id, category, prod, size, price, url} = data
 
     return(
         <div>
@@ -20,7 +20,7 @@ const Card = (props)=> {
                     <p>Categoria: {category}</p>
                     <p>Tamaño: {size}</p>
                     <p>Precio: {price}</p>
-                    <Link to={`/product/${id}`} ><button>Ver mas detalles</button></Link>
+                    <Link to={`/product/${id}`}><button>Ver mas detalles</button></Link>
                 </div>
             </div>
         </div>

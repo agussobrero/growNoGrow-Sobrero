@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import data from "../Data/data";
+/* import data from "../Data/data"; */
 import ItemCount from "../ItemCount/ItemCount"
 import Container from '@mui/material/Container';
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import "../ItemDetail/ItemDetail.css"
 import { CartContext } from "../Context/CartContext";
 
 
-const ItemDetail = ()=> {
+const ItemDetail = (props)=> {
     
     const {id} = useParams({})
     const [product, setProduct] = useState({})
@@ -17,10 +17,15 @@ const ItemDetail = ()=> {
 
     const {addProductToCart} = useContext(CartContext)
 
-    const dataProducts= data.productsList;
+    const {data} = props
+    const {products} = data
+    console.log("data", data)
+    console.log("products", products)
+
+    /* const dataProducts= data.productsList */
 
     useEffect( ()=>{
-        selectProductId(dataProducts, id)
+        selectProductId(products, id)
     },[id])
     
     const selectProductId = (array, id) =>{
