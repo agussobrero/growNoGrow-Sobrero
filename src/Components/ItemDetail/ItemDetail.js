@@ -1,16 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-/* import data from "../Data/data"; */
 import ItemCount from "../ItemCount/ItemCount"
 import Container from '@mui/material/Container';
 import { Link } from "react-router-dom";
 import "../ItemDetail/ItemDetail.css"
 import { CartContext } from "../Context/CartContext";
-import { doc, getDoc } from "firebase/firestore";
 import db from "../../firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 
 
-const ItemDetail = (props)=> {
+const ItemDetail = ()=> {
     
     const {id} = useParams({})
     const [product, setProduct] = useState({})
@@ -24,30 +23,21 @@ const ItemDetail = (props)=> {
         const docSnap = await getDoc(docRef)
 
         if(docSnap.exists()) {
+            console.log("document data: ", docSnap.data())
             let product = docSnap.data()
             product.id = docSnap.id
             console.log(product)
-            setProduct (product)
+            setProduct(product)
         }
         else {
             console.log("no such document")
         }
-    }  
+    } 
 
     useEffect( ()=>{
         getProduct()
-        selectProductId(product, id)
     },[id])
     
-    const selectProductId = (array, id) =>{
-        array.forEach( (product)=>{
-            if(product.id === id) {
-                return(
-                    setProduct(product)
-                    )
-                }
-            })
-    }
 
     const onAdd = (count) =>{
         setOnCarrito(count)
