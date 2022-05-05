@@ -6,6 +6,8 @@ import Container from '@mui/material/Container';
 import { Link } from "react-router-dom";
 import "../ItemDetail/ItemDetail.css"
 import { CartContext } from "../Context/CartContext";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../../firebaseConfig";
 
 
 const ItemDetail = (props)=> {
@@ -17,15 +19,24 @@ const ItemDetail = (props)=> {
 
     const {addProductToCart} = useContext(CartContext)
 
-    const {data} = props
-    const {products} = data
-    console.log("data", data)
-    console.log("products", products)
+    const getProduct = async () =>{
+        const docRef = doc(db, "productsList", id)
+        const docSnap = await getDoc(docRef)
 
-    /* const dataProducts= data.productsList */
+        if(docSnap.exists()) {
+            let product = docSnap.data()
+            product.id = docSnap.id
+            console.log(product)
+            setProduct (product)
+        }
+        else {
+            console.log("no such document")
+        }
+    }  
 
     useEffect( ()=>{
-        selectProductId(products, id)
+        getProduct()
+        selectProductId(product, id)
     },[id])
     
     const selectProductId = (array, id) =>{

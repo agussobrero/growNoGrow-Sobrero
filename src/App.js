@@ -7,7 +7,7 @@ import Reviews from "./pages/Reviews";
 import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
-import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
+import ItemDetail from "./Components/ItemDetail/ItemDetail";
 import Cart from "./pages/Cart";
 import CartProvider from "./Components/Context/CartContext";
 import CartWidget from "./Components/CartWidget/CartWidget";
@@ -26,7 +26,7 @@ function App() {
             <Route path="/reviews" element={<Reviews />}/>
             <Route path="/products" element={<Products />}/>
             <Route path="/cartWidget" element={<CartWidget />}/>
-            <Route path="/product/:id" element={<ItemDetailContainer />}/>
+            <Route path="/product/:id" element={<ItemDetail />}/>
             <Route path="/:category/" element={<Products />}/>
             <Route path="/home" element={<Home />}/>        
             <Route path="/cart" element={<Cart />}/>        
