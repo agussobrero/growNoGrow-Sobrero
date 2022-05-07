@@ -23,14 +23,12 @@ const ItemDetail = ()=> {
         const docSnap = await getDoc(docRef)
 
         if(docSnap.exists()) {
-            console.log("document data: ", docSnap.data())
             let product = docSnap.data()
             product.id = docSnap.id
-            console.log(product)
             setProduct(product)
         }
         else {
-            console.log("no such document")
+            console.log("no such document") //VER EL TEMA DEL 404
         }
     } 
 
