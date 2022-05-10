@@ -1,9 +1,10 @@
 import React from "react";
+import "./PagesStyles/contact.css";
 
 const Contact = () => {
     return(
         <>
-            <h1>Proximanente nos estaremos poniendo en contacto con ustedes</h1>
+            <h1 className="div-contact"> Sección Contacto en construcción</h1>
         </>
     )
 }

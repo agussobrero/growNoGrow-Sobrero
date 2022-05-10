@@ -5,7 +5,6 @@ import { Container } from "@mui/material";
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { Link } from "react-router-dom";
-import Button from '@mui/material/Button';
 
 const CartWidget = () => {
 
@@ -77,22 +76,22 @@ const CartWidget = () => {
                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                 >
-                <p>Carrito de Compras</p>
+                <p className="cartW-p">Carrito de Compras</p>
                 <Container>
                 {cartProducts.map((cartProduct)=>{
                     return(
-                        <MenuItem className='item-cart-modal' key={cartProduct.id}>
+                        <MenuItem className='cartW-modal' key={cartProduct.id}>
                                 <img src={cartProduct.url} alt="imgProd" className="img-card"></img>
-                                <h2>{cartProduct.prod}</h2>
+                                <h2 className='h2-modal'>{cartProduct.prod}</h2>
                                 <p>Tamaño: {cartProduct.size}</p>
                                 <p>Precio: {cartProduct.price}</p>
                         </MenuItem>
                     )
                 })}
                 </Container>
-                <div className='footer-modal-cart'>
+                <div>
                     <Link to={"/cart"}>
-                        <Button className="btn-custom">Iniciar la compra</Button>
+                        <button className="btn-cartW">Iniciar la compra</button>
                     </Link>
                 </div>
             </Menu>

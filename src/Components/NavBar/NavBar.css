@@ -5,17 +5,13 @@
 }
 
 .navBar {
-    background-color: rgb(246, 252, 250);
+    background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: auto;
     height: 15vh;
     box-shadow: 1px 5px 15px rgb(156, 163, 149);
-}
-
-.brand {
-    color: chartreuse;
 }
 
 .navBar-group{
@@ -28,15 +24,15 @@
     justify-content: baseline;
     list-style: none;
     gap: 1rem;
-    color: chartreuse !important;
-    border-color: chartreuse !important;
+    color: #4c6a4b !important;
+    border-color: #4c6a4b !important;
     font-size: 20px;
     font-weight: 500;
     padding-top: 1.8rem;
 }
 
 .navBar-link {
-    color: chartreuse !important;
+    color: #6b9d4a !important;
     text-decoration: none;
 }
 
@@ -44,7 +40,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.23);
-    border-color: chartreuse;
+    border-color: #4c6a4b;
 }
 
 .css-kpm0tx-MuiButtonBase-root-MuiButton-root {
@@ -56,8 +52,8 @@
     display: flex;
     list-style: none;
     gap: 1rem;
-    color: chartreuse !important;
-    border-color: chartreuse !important;
+    color: #6b9d4a !important;
+    border-color: #4c6a4b !important;
     font-size: 1rem !important;
     font-weight: 700 !important;
     margin-top: 0.15rem !important;

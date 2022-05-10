@@ -37,7 +37,6 @@ const ListProducts = ()=> {
         return(
             // eslint-disable-next-line
             array.map( (product)=>{
-                console.log(product)
                 if(product.category===category) {
                     return(
                         setProducts(products => [...products, product])

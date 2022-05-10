@@ -46,7 +46,7 @@ const ItemDetail = ()=> {
     return (
         <Container className="card-detail-cont">
             <div key={product.id} className="card-detail">
-                <img src={product.url} alt="imgProd" className="img-card"></img>
+                <img src={product.url} alt="imgProd" className="img-detail"></img>
                 <h2>{product.prod}</h2>
                 <p>Categoria: {product.category}</p>
                 <p>Tamaño: {product.size}</p>
@@ -62,10 +62,10 @@ const ItemDetail = ()=> {
                     ) : (
                         <div className="menus">
                             <Link to={"/products"}>
-                                <button>Continuar compra</button>
+                                <button className="btn-detail">Continuar compra</button>
                             </Link>
                             <Link to={"/cart"}>
-                                <button>Finaizar compra</button>
+                                <button className="btn-detail2">Finaizar compra</button>
                             </Link>
                         </div>
                     )

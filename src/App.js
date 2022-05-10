@@ -11,7 +11,7 @@ import ItemDetail from "./Components/ItemDetail/ItemDetail";
 import Cart from "./pages/Cart";
 import CartProvider from "./Components/Context/CartContext";
 import CartWidget from "./Components/CartWidget/CartWidget";
-
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   // eslint-disable-next-line
@@ -21,7 +21,7 @@ function App() {
       <BrowserRouter>
         <CartProvider>
           <NavBar />
-          <Routes>
+          <Routes className="background-color-gr">
             <Route path="/contact" element={<Contact />}/>
             <Route path="/reviews" element={<Reviews />}/>
             <Route path="/products" element={<Products />}/>
@@ -32,6 +32,7 @@ function App() {
             <Route path="/cart" element={<Cart />}/>        
             <Route path="*" element={<Error />}/>
           </Routes>
+          <Footer />
         </CartProvider>
       </BrowserRouter>
     </div>

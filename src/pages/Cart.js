@@ -2,11 +2,11 @@ import React, {useContext, useState} from "react";
 import { CartContext } from "../Components/Context/CartContext";
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import Modal from "../Components/Modal/Modal";
 import db from "../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
+import "./PagesStyles/cart.css";
 
 const Cart = () => {
 
@@ -69,17 +69,17 @@ const Cart = () => {
 
     return(
         <div>
-            <div>
-                <h1>Su carrito de Compras</h1>
+            <div className="cart-main">
+                <h1 className="cart-h1">Su carrito de Compras</h1>
 
                 {
                     (cartProducts.length === 0) 
                     
                     &&
                     <div>
-                        <h4>Su carrito está vacio</h4>
+                        <h4 className="cart-h4">Su carrito está vacio</h4>
                         <Link to={"/products"}>
-                            <Button>Ver Productos</Button>
+                            <button className="btn-cart">Ver Productos</button>
                         </Link>
                     </div>
                 }
@@ -89,13 +89,13 @@ const Cart = () => {
                             const {id, url, prod, size, quantity, price} = cartProduct
 
                             return(
-                                <MenuItem className='item-cart-modal' key={id}>
-                                    <img src={url} alt="imgProd" className="img-card"></img>
+                                <MenuItem className='item-cart' key={id}>
+                                    <img src={url} alt="imgProd" className="img-cart"></img>
                                     <h2>{prod}</h2>
                                     <p>Tamaño: {size}</p>
                                     <p>Cantidad: {quantity}</p>
                                     <p>Precio: {price}</p>
-                                    <Button onClick={()=>deleteProduct(cartProduct)}>Delete Product</Button>
+                                    <button className="btn-cart2" onClick={()=>deleteProduct(cartProduct)}>Delete Product</button>
                                 </MenuItem>
                                 )       
                             })}
@@ -106,12 +106,12 @@ const Cart = () => {
 
                     &&
                     <div>
-                        <h3>Total Carrito: {totalCart()}</h3>
-                        <Button onClick={()=>deleteCart()}>Delete Cart</Button>
+                        <h3 className="cart-h3">Total Carrito $: {totalCart()}</h3>
+                        <button className="btn-cart" onClick={()=>deleteCart()}>Delete Cart</button>
                         <Link to={"/products"}>
-                            <Button>Continuar Comprando</Button>
+                            <button className="btn-cart">Continuar Comprando</button>
                         </Link>
-                        <Button onClick={()=>setOpenModal(true)}>Finalizar Compra</Button>
+                        <button className="btn-cart" onClick={()=>setOpenModal(true)}>Finalizar Compra</button>
                     </div>
                 }
             </div>
@@ -119,23 +119,23 @@ const Cart = () => {
 
                 {
                     successOrder ? (
-                        <>
-                            <h3>Su pedido ha sido procesado</h3>
+                        <div className="div-order">
+                            <h3 className="order-h3">Su pedido ha sido procesado</h3>
                             <h4>Nº de pedido: {successOrder}</h4>
                             <Link to={"/products"}>
-                                <Button onClick={deleteCart}>Aceptar</Button>
+                                <button className="btn-form" onClick={deleteCart}>Aceptar</button>
                             </Link>
-                        </>
+                        </div>
                     ) : (
                         <>
-                            <h2>Datos del Cliente</h2>
-                            <form onSubmit={handleSubmit}>
+                            <form className="form" onSubmit={handleSubmit}>
+                            <h2 className="cart-form-h2">Datos del Cliente</h2>
                                 {console.log(formData)}
                                 {console.log(order)}
                                 <input type="text" placeholder="Nombre" name="name" onChange={handleChange} value={formData.name}/>
                                 <input type="number" placeholder="Telefono" name="phone" onChange={handleChange} value={formData.phone}/>
                                 <input type="email" placeholder="email" name="email" onChange={handleChange} value={formData.email}/>
-                                <Button type="submit">Enviar Formulario</Button>
+                                <button className="btn-form" type="submit">Enviar Formulario</button>
                             </form>
                         </>
                     )

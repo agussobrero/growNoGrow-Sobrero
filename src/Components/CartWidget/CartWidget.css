@@ -22,3 +22,30 @@
 .cart-button{
     padding-top: 1rem;
 }
+
+.btn-cartW{
+    padding: 0.5rem;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #2d452f;
+    color: white;
+    border: none;
+    list-style: none;
+    margin-left: 2.8rem;
+}
+
+.cart-button{
+    padding-top: 1rem;
+}
+
+.cartW-modal{
+    gap: 0.5rem;
+}
+
+.h2-modal{
+    font-size: 16px;
+}
+
+.cartW-p{
+    padding-left: 2.3rem;
+}

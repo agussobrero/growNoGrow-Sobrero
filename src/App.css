@@ -7,6 +7,7 @@
 .App {
   text-align: center;
   width: 100%;
+  background-color: #cfe2ce;
 }
 
 .App-logo {
@@ -45,6 +46,7 @@
 .main-container {
   height: 100vh;
   width: 100%;
+  background-color: #cfe2ce;
 }
 
 .p-listProd {
@@ -59,8 +61,6 @@
   justify-content: center;
   align-items: center;
 }
-
-
 
 @keyframes App-logo-spin {
   from {

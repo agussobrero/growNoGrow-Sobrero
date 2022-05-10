@@ -1,9 +1,10 @@
 import React from "react";
+import "./PagesStyles/review.css";
 
 const Reviews = ()=>{
     return(
       <>
-        <h1>Proximamente los reviews que nos vayan pasando</h1>
+        <h1 className="div-review"> Sección Review en construcción</h1>
       </>
     )
 }

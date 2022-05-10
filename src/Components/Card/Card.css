@@ -1,14 +1,15 @@
 
 .card {
-    border: 1px solid black;
+    box-shadow: 1px 5px 15px rgb(156, 163, 149);
     border-radius: 5px;
-    background-color: #ffd500;
+    background-color: white;
     padding: 1.8rem 1.5rem;
     line-height: 1.6rem;
-    height: 55vh;
+    height: 50vh;
     width: 28vh;
     z-index: 0;
     font-size: 14px;
+    margin-top: 0.5rem;
 }
 
 .div-starContainer {
@@ -21,6 +22,14 @@
 .img-card {
     height: 100px;
     width: auto;
+}
+
+.btn-card-card{
+    padding: 0.4rem;
+    background-color: #2d452f;
+    color: white;
+    border: none;
+    margin-top: 3rem;
 }
 
 
